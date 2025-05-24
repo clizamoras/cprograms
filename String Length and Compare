@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+// Function to calculate string length
+int stringLength(const char str[]) {
+    int length = 0;
+    while (str[length] != '\0') {
+        length++;
+    }
+    return length;
+}
+
+// Function to compare two strings
+int stringCompare(const char str1[], const char str2[]) {
+    int i = 0;
+    while (str1[i] != '\0' && str2[i] != '\0') {
+        if (str1[i] != str2[i]) {
+            return str1[i] - str2[i];  // Difference between characters
+        }
+        i++;
+    }
+    return str1[i] - str2[i];  // In case strings have different lengths
+}
+
+int main() {
+    char str1[100], str2[100];
+
+    // Input strings
+    printf("Enter the first string: ");
+    gets(str1);  // Note: `gets()` is unsafe; use `fgets()` in real applications
+
+    printf("Enter the second string: ");
+    gets(str2);
