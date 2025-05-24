@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    float sum = 0, average;
+
+    // Read number of students
+    printf("Enter the number of students: ");
+    scanf("%d", &n);
+
+    float scores[n];
+
+    // Read scores
+    printf("Enter the scores of %d students:\n", n);
+    for(i = 0; i < n; i++) {
+        printf("Student %d score: ", i + 1);
+        scanf("%f", &scores[i]);
+        sum += scores[i];
+    }
+
+    // Calculate average
+    average = sum / n;
+    printf("\nClass Average: %.2f\n", average);
+
+    // Print students scoring above average
+    printf("\nStudents scoring ABOVE average:\n");
+    for(i = 0; i < n; i++) {
+        if(scores[i] > average) {
+            printf("Student %d: %.2f\n", i + 1, scores[i]);
+        }
+    }
+
+    // Print students scoring below average
+    printf("\nStudents scoring BELOW average:\n");
+    for(i = 0; i < n; i++) {
+        if(scores[i] < average) {
+            printf("Student %d: %.2f\n", i + 1, scores[i]);
+        }
+    }
+
+    return 0;
+}
