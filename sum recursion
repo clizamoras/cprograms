@@ -1,0 +1,15 @@
+#include<stdio.h>
+int sum(int n);
+int main(){
+int f;
+f=sum(n);
+printf("Factorail is= %d",f(5));
+return 0;
+}
+int sum(int n){
+int sum(n-1);
+if(n==1){
+return 1;
+}
+return n+sum(n-1);
+}
