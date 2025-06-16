@@ -1,0 +1,22 @@
+#include<stdio.h>
+int gcd(int a,int b){
+while(b!=0){
+ int temp=b;
+     b=a%b;
+     a=temp;
+}
+return 0;
+}
+int lcm(int a,int b){
+return (a*b)/gcd(a,b);
+}
+int main(){
+int a,b,gcd,lcm;
+printf("Enter the value of a and b");
+scanf("%d %d",&a,&b);
+gcd=gcd(a,b);
+lcm=lcm(a,b);
+printf(gcd);
+printf(lcm);
+return 0;
+)
