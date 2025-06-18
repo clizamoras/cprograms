@@ -1,0 +1,11 @@
+#include<stdio.h>
+#imclude<string.h>
+int main(){
+char str[100];
+int len;
+printf("Enter the string");
+gets(str);
+len=len(str);
+printf("Length of the string:%d\n",len);
+return 0;
+}
