@@ -1,0 +1,5 @@
+#include<stdio.h>
+struct{
+int x;
+int y;
+}point 1,point 2;
