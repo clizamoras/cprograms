@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int a = 10;       // normal integer variable
+    int *ptr;         // pointer to integer
+
+    ptr = &a;         // store the address of a in ptr
+
+    printf("Value of a = %d\n", a);
+    printf("Address of a = %p\n", &a);
+    printf("Value stored in ptr = %p\n", ptr);
+    printf("Value pointed by ptr = %d\n", *ptr);
+
+    // changing the value using pointer
+    *ptr = 20;
+
+    printf("\nAfter changing value through pointer:\n");
+    printf("Value of a = %d\n", a);
+
+    return 0;
+}
