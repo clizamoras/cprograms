@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char str[1000];
+    int a = 0, e = 0, i = 0, o = 0, u = 0;
+
+    printf("Enter a sentence: ");
+    fgets(str, sizeof(str), stdin);  // Read sentence with spaces
+
+    for (int j = 0; str[j] != '\0'; j++) {
+        char ch = tolower(str[j]); // Convert to lowercase
+        if (ch == 'a') a++;
+        else if (ch == 'e') e++;
+        else if (ch == 'i') i++;
+        else if (ch == 'o') o++;
+        else if (ch == 'u') u++;
+    }
+
+    printf("Vowel frequencies:\n");
+    printf("A: %d\n", a);
+    printf("E: %d\n", e);
+    printf("I: %d\n", i);
+    printf("O: %d\n", o);
+    printf("U: %d\n", u);
+
+    return 0;
+}
