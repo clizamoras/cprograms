@@ -1,0 +1,21 @@
+#include<stdio.h> 
+#include<string.h> 
+struct Car
+{
+char name[10]; 
+int Model; 
+float price ;
+};
+void main()
+{
+struct Car c1;
+printf("Enter Car name:\n"); 
+gets(c1.name);
+printf("Enter Model No:\n"); 
+scanf("%d",&c1.Model);
+printf("Enter price of the Car in lakhs:\n"); 
+scanf("%f",&c1.price);
+printf("\nCar name is %s:",c1.name); 
+printf("\nCar Model is %d:",c1.Model); 
+printf("\nCar price is :%f lakhs",c1.price);
+}
