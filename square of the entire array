@@ -1,0 +1,13 @@
+#include<stdio.h>
+int square(int arr[100]);
+int main(){
+int n,arr[100],result;
+printf("Enter the value of n");
+scanf("%d",&n);
+for(int i=0;i<n;i++){
+  scanf("%d",&arr[i]);
+}
+result=square(arr,n);
+printf("%d\n",result);
+return 0;
+}
