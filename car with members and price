@@ -1,3 +1,4 @@
+
 #include<stdio.h> 
 #include<string.h> 
 struct Car
@@ -18,4 +19,5 @@ scanf("%f",&c1.price);
 printf("\nCar name is %s:",c1.name); 
 printf("\nCar Model is %d:",c1.Model); 
 printf("\nCar price is :%f lakhs",c1.price);
+
 }
