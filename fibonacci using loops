@@ -1,3 +1,4 @@
+
 #include<stdio.h>
 main()
 {
@@ -11,4 +12,5 @@ num1=num2;
 num2=fib;
 }
 printf("nth fibonacci number is %d",fib);
+
 }
