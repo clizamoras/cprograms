@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 int main() {
 int n, reversed = 0, remainder, original;
@@ -16,4 +17,5 @@ printf("%d is a palindrome.", original);
 else
 printf("%d is not a palindrome.", original);
 return 0;
+
 }
