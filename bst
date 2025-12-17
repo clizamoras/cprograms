@@ -16,6 +16,7 @@ NODE*Createtree(NODE*node,int data){
         NODE*temp=(NODE*)malloc(sizeof(NODE));
         temp->data=data;
         temp->left=temp->right=NULL;
+        return temp;
     }
     if(data<node->data){
         node->left=Createtree(node->left,data);
@@ -25,8 +26,9 @@ NODE*Createtree(NODE*node,int data){
     }
     else{
         printf("dublicate");
+}
         return node;
-    }
+    
 }
 NODE*Search(NODE*node, int data){
     if(node==NULL){
@@ -41,7 +43,7 @@ NODE*Search(NODE*node, int data){
     else{
         printf("data found");
     }
-    
+    return node;
 }
  void inorder(NODE*node){
      if(node!=NULL){
