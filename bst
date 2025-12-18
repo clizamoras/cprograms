@@ -3,7 +3,7 @@
 
 // Online C compiler to run C program 
 
-// Online C compiler to run C program online
+
 #include <stdio.h>
 #include<stdlib.h>
 struct BST{
