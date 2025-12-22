@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define m 3
+int h[m]={0};
+void insert(){
+    int key,i,index;
+    printf("Enter the key");
+    scanf("%d",&key);
+    for(i=0;i<m;i++){
+        index=((key%m)+i)%m;
+        if(h[index]==0){
+            h[index]=key;
+            break;
+        }
+    }
+    if(i==m){
+        printf("it is over");
+    }
+}
+void display(){
+    printf("The elements are:");
+    for(int i=0;i<m;i++){
+        printf("index:%d value:%d",i,h[i]);
+    }
+}
+int main(){
+    int c;
+    printf("1.insert 2.display 3.exit");
+    while(1){
+        printf("Enter the choice:");
+        scanf("%d",&c);
+        switch(c){
+            case 1:insert(); 
+                   break;
+            case 2:display();
+                   break;
+            case 3:exit(0);
+            default:printf("invalid");
+        }
+    }
+    return 0;
+}
