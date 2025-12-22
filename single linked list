@@ -1,0 +1,175 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node{
+    char name[20],branch[20];
+    int USN,sem;
+    long int phno;
+    struct node *link;
+};
+struct node*head=NULL;
+void create(){
+    struct node *temp,*ptr;
+    temp=(struct node*)malloc(sizeof(struct node));
+    if(temp==NULL){
+        printf("\nOut of memory\n");
+        return;
+    }
+    printf("enter data");
+    printf("Enter name:");
+    scanf("%s",temp->name);
+    printf("Enter branch:");
+    scanf("%s",temp->branch);
+    printf("Enter USN:");
+    scanf("%d",&temp->USN);
+    printf("Enter sem:");
+    scanf("%d",&temp->sem);
+    printf("Enter phno:");
+    scanf("%ld",&temp->phno);
+    temp->link=NULL;
+    if(head==NULL){
+        head=temp;
+    }
+    else{
+        temp->link=head;
+        head=temp;
+    }
+}
+void insert_front(){
+    struct node*temp,*ptr;
+    temp=(struct node*)malloc(sizeof(struct node));
+    if(temp==NULL){
+        printf("\nOut of memory\n");
+        return;
+    }
+    printf("enter data");
+    printf("Enter name:");
+    scanf("%s",temp->name);
+    printf("Enter branch:");
+    scanf("%s",temp->branch);
+    printf("Enter USN:");
+    scanf("%d",&temp->USN);
+    printf("Enter sem:");
+    scanf("%d",&temp->sem);
+    printf("Enter phno:");
+    scanf("%ld",&temp->phno);
+    temp->link=NULL;
+     if(head==NULL){
+        head=temp;
+    }
+    else{
+        temp->link=head;
+        head=temp;
+    }
+}
+void insert_rear(){
+    struct node*temp,*ptr;
+    temp=(struct node*)malloc(sizeof(struct node));
+    if(temp==NULL){
+        printf("\nOut of memory\n");
+        return;
+    }
+    printf("enter data");
+    printf("Enter name:");
+    scanf("%s",temp->name);
+    printf("Enter branch:");
+    scanf("%s",temp->branch);
+    printf("Enter USN:");
+    scanf("%d",&temp->USN);
+    printf("Enter sem:");
+    scanf("%d",&temp->sem);
+    printf("Enter phno:");
+    scanf("%ld",&temp->phno);
+    temp->link=NULL;
+     if(head==NULL){
+        head=temp;
+    }
+    else{
+        ptr=head;
+        while(ptr->link!=NULL){
+            ptr=ptr->link;
+        }
+        ptr->link=temp;
+    }
+}
+void delete_front(){
+    struct node*ptr;
+    if(head==NULL){
+        printf("List is empty");
+        return;
+    }
+    else{
+        ptr=head;
+        head=head->link;
+        printf("deleted data is:");
+        printf("\n name:%s\n branch:%s\n USN:%d\n sem:%d\n phno:%ld\n",ptr->name,ptr->branch,ptr->USN,ptr->sem,ptr->phno);
+        free(ptr);
+    }
+}
+void delete_rear(){
+    struct node*temp,*ptr;
+    if(head==NULL){
+         printf("List is empty");
+        return;
+    }
+    else if(head->link==NULL){
+        ptr=head;
+        head=NULL;
+        printf("deleted data is:");
+        printf("\n name:%s\n branch:%s\n USN:%d\n sem:%d\n phno:%ld\n",temp->name,temp->branch,temp->USN,temp->sem,temp->phno);
+        free(ptr);
+    }
+    else{
+        ptr=head;
+        while(ptr->link!=NULL){
+            temp=ptr;
+            ptr=ptr->link;
+        }
+        temp->link=NULL;
+        printf("deleted data is:");
+        printf("\n name:%s\n branch:%s\n USN:%d\n sem:%d\n phno:%ld\n",temp->name,temp->branch,temp->USN,temp->sem,temp->phno);
+        free(ptr);
+    }
+}
+void display(){
+    int count=0;
+    struct node*temp,*ptr;
+     if(head==NULL){
+         printf("List is empty");
+        return;
+    }
+    else{
+        ptr=head;
+        while(ptr!=NULL){
+            printf("The elements are:");
+            printf("\n name:%s\n branch:%s\n USN:%d\n sem:%d\n phno:%ld\n",ptr->name,ptr->branch,ptr->USN,ptr->sem,ptr->phno);
+            ptr=ptr->link;
+            count++;
+        }
+        printf("Number of node are :%d\n",count);
+    }
+}
+int main(){
+    int ch;
+    printf("1.create 2.insertfront 3.insertrear 4.deletefront 5.deleterear 6.display 7.exit");
+    while(1){
+        printf("Enter a choice");
+        scanf("%d",&ch);
+        switch(ch){
+            case 1:create();
+                   break;
+            case 2:insert_front();
+                   break;
+            case 3:insert_rear();
+                   break;
+            case 4:delete_front();
+                   break;
+            case 5:delete_rear();
+                   break;
+            case 6:display();
+                   break;
+            case 7:exit(0);
+            default:printf("invalid");
+        }
+    }
+    return 0;
+}
