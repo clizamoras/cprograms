@@ -1,0 +1,66 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<ctype.h>
+#define m 2
+char q[m];
+int r=-1,f=-1;
+void insert(){
+    char ch;
+    printf("Enter the character");
+    scanf(" %c", &ch);
+    if(((r+1)%m)==f){
+        printf("overflow");
+    }
+    else if(r==-1 && f==-1){
+        r=0,f=0;
+        q[r]=ch;
+    }
+    else{
+        r=(r+1)%m;
+        q[r]=ch;
+    }
+}
+void dequeue(){
+    if(f==-1&&r==-1){
+        printf("underflow");
+    }
+    else if(f==r){
+        printf("Deleted element is:",q[f]);
+        r=-1,f=-1;
+    }
+    else{
+         printf("Deleted element is:",q[f]);
+         f=(f+1)%m;
+    }
+}
+void display(){
+    if(f==-1 && r==-1){
+        printf("underflow");
+    }
+    else{
+        printf("elements are:");
+        for(int i=f;i!=r;i=((i+1)%m)){
+            printf("%c\n",q[i]);
+        }
+        printf("%c\n",q[r]);
+    }
+}
+int main(){
+    int c;
+    printf("1.insert 2.dequeue 3.display 4.exit");
+    while(1){
+        printf("Enter your choice");
+        scanf("%d",&c);
+        switch(c){
+            case 1:insert();
+                   break;
+            case 2:dequeue();
+                   break;
+            case 3:display();
+                   break;
+            case 4:exit(0);
+            deafult:printf("invalid");
+        }
+    }
+    return 0;
+}
