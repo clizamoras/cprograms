@@ -1,0 +1,142 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node{
+    char name[20],branch[20];
+    int USN,sem;
+    long int phno;
+    struct node*prev,*next;
+};
+struct node*head=NULL,*temp,*ptr;
+void enter_details(){
+    printf("Enter name");
+    scanf("%s",temp->name);
+    printf("Enter branch");
+    scanf("%s",temp->branch);
+    printf("Enter USN");
+    scanf("%d",&temp->USN);
+    printf("Enter sem");
+    scanf("%d",&temp->sem);
+    printf("Enter phno");
+    scanf("%ld",&temp->phno);
+    temp->prev=NULL;
+    temp->next=NULL;
+}
+void create(){
+    temp=(struct node*)malloc(sizeof(struct node));
+    enter_details();
+     if(head==NULL){
+        head=temp;
+    }
+    else{
+        temp->next=head;
+        head->prev=temp;
+        head=temp;
+    }
+}
+void insert_front(){
+    if(head==NULL){
+        create();
+        return;
+    }
+    temp=(struct node*)malloc(sizeof(struct node));
+    enter_details();
+    temp->next=head;
+    head->prev=temp;
+    head=temp;
+    
+}
+void insert_rear(){
+     if(head==NULL){
+        create();
+        return;
+    }
+    temp=(struct node*)malloc(sizeof(struct node));
+    enter_details();
+    ptr=head;
+    while(ptr->next!=NULL){
+        ptr=ptr->next;
+    }
+    ptr->next=temp;
+    temp->prev=ptr;
+}
+void print_details(struct node*node){
+    printf("The deleted data is:");
+        printf("\nName:%s\n branch:%s\n USN:%d\nsem:%d\n phno:%ld\n",node->name,node->branch,node->USN,node->sem,node->phno);
+}
+void delete_front(){
+    if(head==NULL){
+        printf("List is empty");
+        return;
+    }
+    ptr=head;
+    if(head->next==NULL){
+        head=NULL;
+    }
+    else{
+        head=head->next;
+        head->prev=NULL;
+    }
+    print_details(ptr);
+    free(ptr);
+}
+void delete_rear(){
+    if(head==NULL){
+        printf("list is empty");
+        return;
+    }
+    ptr=head;
+    if(head->next==NULL){
+        head=NULL;
+    }
+    else{
+        while(ptr->next!=NULL){
+            ptr=ptr->next;
+        }
+        ptr->prev->next=NULL;
+    }
+    print_details(ptr);
+    free(ptr);
+}
+void display(){
+    int count=0;
+
+    if(head==NULL){
+        printf("list is empty");
+        return;
+    }
+    else{
+        ptr=head;
+        while(ptr!=NULL){
+        printf("\nName:%s\n branch:%s\n USN:%d\nsem:%d\n phno:%ld\n",ptr->name,ptr->branch,ptr->USN,ptr->sem,ptr->phno);
+        count++;
+        ptr=ptr->next;
+       }
+       printf("Number of nodes are:%d",count);
+    }
+}
+int main(){
+    int c;
+    printf("1.create 2.insert_front 3.insert_rear 4.delete_front 5.delete_rear 6.display 7.exit");
+    while(1){
+        printf("Enter a choice");
+        scanf("%d",&c);
+        switch(c){
+            case 1:create();
+                   break;
+            case 2:insert_front();
+                   break;
+            case 3:insert_rear();
+                   break;
+            case 4:delete_front();
+                   break;
+            case 5:delete_rear();
+                   break;
+            case 6:display();
+                   break;
+            case 7:exit(0);
+            default:printf("Invalid");
+                   
+        }
+    }
+    return 0;
+}
