@@ -1,0 +1,12 @@
+void search(int key){
+struct node*temp=head;
+int position =1;
+while(temp!=NULL){
+if(temp->data==key){
+  printf("element found in position",position);
+return;
+}
+
+}
+printf("element not found");
+}
