@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 int getmax(int array[],int n){
     int max=array[0];
