@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+ int i, n;
+ int *arr;
+ printf("Enter the number of elements: ");
+ scanf("%d", &n);
+ arr = (int*) calloc(n, sizeof(int));
+ if (arr == NULL) {
+ printf("Memory Allocation Failed");
+ exit(1);
+ }
+ for (i = 0; i < n; i++) {
+ printf("Enter value %d: ", i);
+ scanf("%d", &arr[i]);
+ }
+ printf("You have entered: ");
+ for (i = 0; i < n; i++)
+ printf("%d ", arr[i]);
+ free(arr); // Releasing memory
+ return 0;
+}
