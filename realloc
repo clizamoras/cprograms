@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main() {
+ char *str;
+ str = (char *) malloc(10);
+ if (str == NULL) {
+ printf("Memory could not be allocated");
+ exit(1);
+ }
+ strcpy(str, "Hi");
+ printf("STR = %s", str);
+ // Reallocate
+ str = (char *) realloc(str, 20);
+ if (str == NULL) {
+ printf("Memory could not be reallocated");
+ exit(1);
+ }
+ strcpy(str, "Hi there");
+ printf("\nSTR after reallocation = %s", str);
+ free(str); // Free memory
+ return 0;
+}
