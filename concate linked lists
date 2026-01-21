@@ -1,0 +1,10 @@
+struct node* concate(struct node*head1,struct node*head2){
+struct node*temp;
+if(head1==NULL)
+  return head2;
+temp=head1;
+while(temp->next!=NULL)
+ temp=temp->next;
+temp->next=head2;
+return head1;
+}
