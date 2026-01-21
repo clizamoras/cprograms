@@ -1,0 +1,7 @@
+int isden(struct node*t1,struct node*t2){
+if(t1==NULL &&t2==NULL)
+ return 1;
+if(t1==NULL || t2==NULL)
+return 0;
+return(t1->data==t2->data,isden(t1->left,t2->left),isden(t1->right,t2->right));
+}
