@@ -1,0 +1,6 @@
+int f1(int n){
+if n==0
+return n;
+else
+return f2(n-1);
+}
