@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    char s[50], sub[50];
+    int pos, len, i;
+
+    gets(s);
+    scanf("%d %d", &pos, &len);
+
+    for (i = 0; i < len; i++)
+        sub[i] = s[pos + i];
+
+    sub[i] = '\0';
+
+    printf("Substring: %s", sub);
+    return 0;
+}
