@@ -9,6 +9,7 @@ while(str[i]!='\0'){
   word++;
  i++;
 }
+
 printf("%d\n",word);
 return 0;
 }
