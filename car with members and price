@@ -19,4 +19,5 @@ printf("\nCar name is %s:",c1.name);
 printf("\nCar Model is %d:",c1.Model); 
 printf("\nCar price is :%f lakhs",c1.price);
 
+
 }
