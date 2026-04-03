@@ -6,6 +6,7 @@ struct node{
     long int phno;
     struct node*prev,*next;
 };
+
 struct node*head=NULL,*temp,*ptr;
 void enter_details(){
     printf("Enter name");
