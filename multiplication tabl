@@ -1,4 +1,3 @@
-
 #include<stdio.h>
 #define colmax 10
 #define rowmax 6
