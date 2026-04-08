@@ -6,6 +6,7 @@ int top=-1;
 void push(char elem){
   s[++top]=elem;
 }
+
 char pop(){
   (return(s[top--]));
 }
