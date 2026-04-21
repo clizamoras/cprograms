@@ -4,6 +4,7 @@ int i=0,pos,length;
 char s[100];
 gets(s);
 scanf("%d %d",&pos,&len);
+
 for(i=0;i<=len;i++)
 s[i]=s[pos+i];
 printf(s);
