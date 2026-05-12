@@ -2,6 +2,7 @@
 void changevalue(int *x){
 *x=100;
 }
+
 int main(){
 int a=10;
 changevalue(&a);
