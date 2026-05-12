@@ -8,6 +8,7 @@ int stringLength(const char str[]) {
     return length;
 }
 
+
 // Function to compare two strings
 int stringCompare(const char str1[], const char str2[]) {
     int i = 0;
