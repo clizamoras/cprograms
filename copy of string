@@ -8,7 +8,6 @@ int main() {
         i++;
     }
     str2[i] = '\0';
-
     printf("Copied string: %s\n", str2);
     return 0;
 }
