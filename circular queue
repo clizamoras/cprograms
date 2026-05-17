@@ -15,6 +15,7 @@ void insert(){
         r=0,f=0;
         q[r]=ch;
     }
+
     else{
         r=(r+1)%m;
         q[r]=ch;
