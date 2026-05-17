@@ -9,7 +9,6 @@ int compareStrings(char str1[], char str2[]) {
         }
         i++;
     }
-
     return 1; // Strings are equal
 }
 
