@@ -2,7 +2,6 @@
 int main() {
     int n, i;
     float sum = 0, average;
-
     // Read number of students
     printf("Enter the number of students: ");
     scanf("%d", &n);
