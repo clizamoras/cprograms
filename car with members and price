@@ -8,7 +8,6 @@ float price ;
 };
 void main()
 {
-
 struct Car c1;
 printf("Enter Car name:\n"); 
 gets(c1.name);
